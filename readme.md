@@ -104,3 +104,55 @@ Server Specification
 | Web Logic | Oracle |
 | Web Sphere | IBM |
 | Glan Fish | Sun -> Oracle |
+
+## 03 Tomcat Installation & First Program
+
+- We make program which are run on web layer. These are 2 types - Servlet or JSP.
+- Spring Boot are also using the Servlet Technology.
+- Servlet is a Web Layer Component, its a Servlet Technology, class, Interface or API.
+- Servlet runs on inside server or server end.
+
+    ### How to make Servlet
+    - Make a class extened by GenericServlet Class.
+    ```Java
+    class MyServlet extends GenericServlet {
+        // code
+    }
+    ```
+    - Servlet Execution start from Service.
+    - GenricServlet already implements the Servlet Interface.
+    - main() method prototye are predifined and its body are user defined.
+    - GenericServlet Class are have the Service() method but its `abstract method,` then its your duty to override the Service() method to beware of Compile-Time Error.
+    ```Java
+    class MyServlet extends GenericServlet {
+        public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+            // code
+        }
+    }
+    ```
+    - Who are call the service() method?
+    - Server are have 2 parts - Application or Web Server, Application Server handle the Servlet or other Stuffs and its call the Service() method.
+    - Using PrintWriter class we print(show) data on web page and println() method.
+    ```Java
+    class MyServlet extends GenericServlet {
+        public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+            PrintWriter pw = res.getWriter();
+            pw.println("Namaste JavaEE!");
+        }
+    }
+    ```
+    - GenericServlet, ServletRequest, ServletResponse or ServletException are available in `javax.servlet.*` package and IOException or PrintWriter are avialble in `java.io.*` package;
+    ```Java
+    import javax.servlet.*;
+    import java.io.*;
+    class MyServlet extends GenericServlet {
+        public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+            PrintWriter pw = res.getWriter();
+            pw.println("Namaste JavaEE!");
+        }
+    }
+    ```
+    - when you compile your code you get some error its ok, but we want to set the `ClassPath` of JakartaEE Classes.
+    ```unix
+    set classpath=C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9.0\lib\servlet-api.jar;
+    ```
