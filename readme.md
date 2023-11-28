@@ -156,3 +156,17 @@ Server Specification
     ```unix
     set classpath=C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9.0\lib\servlet-api.jar;
     ```
+
+## 04 Execution of Servlet and Deployment Descriptor File
+
+### How many type of Mapping
+ | Name | Description |
+ | --- | --- |
+ | Exect Mapping | When complete url-pattern are exect match |
+ | Directory Mapping | When only directory are exact match and wild card are not mandatory |
+ | Extension Mapping | When only extension are exact match and before path is not mandatory |
+
+## 05 HTTP Based Servlet
+- Apache Tomcat8 belongs to JavaEE8
+- Apache Tomcat9 belongs to JakartaEE8
+- Apache Tomcat10 belongs to JakartaEE9
